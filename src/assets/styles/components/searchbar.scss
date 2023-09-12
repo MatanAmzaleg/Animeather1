@@ -13,6 +13,7 @@
         font-size: larger;
         margin-inline-start: 15px;
         color:rgb(143, 143, 143);
+        font-size: small;
 
 
         transition: color 0.3s;
@@ -33,5 +34,9 @@
     .searchbar-sec{
         width: 60%;
         height: 6vh;
+
+        .search-input{
+            font-size: large;
+        }
     }
 }

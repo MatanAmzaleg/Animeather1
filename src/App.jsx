@@ -5,7 +5,6 @@ import { SearchBar } from "./cmps/SearchBar";
 import { Sidebar } from "./cmps/Sidebar.jsx";
 import "./assets/styles/main.scss";
 import { weatherService } from "./services/weahter.service";
-import MyLoader from "./cmps/LoaderSkeleton.jsx";
 import Skeleton from '@mui/material/Skeleton';
 
 function App() {
@@ -43,18 +42,6 @@ function App() {
     console.log("couldnt find location");
     fetchCurrLocationData({city:'barcelona'})
   }
-
-  // if (!weatherDetails) {
-  //   setTimeout(()=>{
-  //     fetchCurrLocationData(add)
-  //   },100000)
-
-  //   return(
-  //     <MyLoader className="main-sec flex"></MyLoader>
-  //   )
-
-  // }
-
 
 
   return (

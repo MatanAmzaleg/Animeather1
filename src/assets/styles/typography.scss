@@ -1,0 +1,15 @@
+// @font-face {
+//     font-family: 'CoreSans';
+//     src: url('./fonts/Core\ Sans\ AR\ 65\ Bold.ttf') format('ttf'),
+//          url('./fonts/Core\ Sans\ AR\ 65\ Bold.ttf') format('ttf');
+//   }
+
+  @font-face {
+     font-family: 'CoreSans';
+     src: local('CoreSans'), url('./fonts/Core\ Sans\ AR\ 65\ Bold.ttf');
+ }
+  @font-face {
+     font-family: 'Neue';
+     src: local('CoreSans'), url('./fonts/Fontspring-DEMO-neuesingular-h-regular.otf');
+ }
+
