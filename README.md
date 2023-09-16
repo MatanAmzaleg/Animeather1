@@ -9,3 +9,4 @@ Currently, two official plugins are available:
 # Animeather-mac
 # Animeather-mac
 # Animeather-mac
+# Animeather1
