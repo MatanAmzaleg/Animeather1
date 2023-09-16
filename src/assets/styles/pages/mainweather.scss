@@ -8,11 +8,11 @@
     }
 
     .city-sec {
-        width: 75%;
         padding-inline: 2%;
         padding-block-start: 2%;
-        height: 25%;
+        height: 30%;
         font-family: CoreSans;
+        gap: 20px;
 
         .location-heading{
             width: 60%;
@@ -20,7 +20,7 @@
             gap: 10px;
 
             .city{
-                font-size: 1.7rem;
+                font-size: 2rem;
             }
 
             .state{
@@ -28,17 +28,43 @@
             }
         }
         .humidity{
-            color: rgb(205, 203, 203);
+            color: rgb(141, 141, 141);
             font-size: 0.8rem;
             margin-top: 5px;
+        }
+        .degrees{
+            margin-top: 40px;
+            font-size: 2.9rem;
         }
         
         .icon-sec{
             width: 40%;
             height: auto;
             .icon{
-                width: max(30px,80px);
-                height: max(30px,80px);
+                width: max(30px,100px);
+                height: max(30px,100px);
+            }
+        }
+
+
+    }
+    .hourly-forecast{
+        height: 30%;
+        background-color: #2b3a50;
+        margin-inline-end: 2%;
+        border-radius: 20px;
+        padding-inline-start: 2%;
+        padding-block: 2%;
+
+        .title{
+            font-size: small;
+            color: rgb(141, 141, 141);
+            margin-bottom: 10px;
+        }
+
+        .hourly-cards-layout{
+            >*:not(:last-child) {
+                border-right: 1px solid grey;
             }
         }
     }

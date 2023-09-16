@@ -5,12 +5,14 @@ const key = import.meta.env.VITE_WEATHER_KEY
 const date = utilService.getDate()
 
 export const weatherService = {
-getWeatherDetails
+  getWeatherDetails
 }
 
 
 async function getWeatherDetails (query){
-try{
+  try{
+  console.log(`key is ${key}`);
+  console.log(`http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${query}&days=7&dt=${date}&hour=18,21,00`);
    const data = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${query}&days=7&dt=${date}&hour=18,21,00`)
  console.log(data);
    return data.data
