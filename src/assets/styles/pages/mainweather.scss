@@ -14,5 +14,32 @@
         height: 25%;
         font-family: CoreSans;
 
+        .location-heading{
+            width: 60%;
+            align-items: baseline;
+            gap: 10px;
+
+            .city{
+                font-size: 1.7rem;
+            }
+
+            .state{
+                font-weight: 100;
+            }
+        }
+        .humidity{
+            color: rgb(205, 203, 203);
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+        
+        .icon-sec{
+            width: 40%;
+            height: auto;
+            .icon{
+                width: max(30px,80px);
+                height: max(30px,80px);
+            }
+        }
     }
 }

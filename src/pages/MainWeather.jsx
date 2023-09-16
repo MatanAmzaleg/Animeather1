@@ -22,9 +22,17 @@ export const MainWeather = ({ weatherData, fetchCurrLocationData}) => {
 
   return (
     <section className="main-weather-sec debug flex">
-      <div className="city-sec debug">
-        <h1 className="location">{weatherData ? weatherData.location.name : add.city},</h1>
-        <h1 className="location">{weatherData ? weatherData.location.country: add.country}</h1>
+      <div className="city-sec flex debug">
+        <div className="flex column w100">
+        <div className="location-heading flex ">
+        <h1 className="city larger">{weatherData ? weatherData.location.name : add.city},</h1>
+        <h1 className="state smaller">{weatherData ? weatherData.location.country: add.country}</h1>
+        </div>
+        <h3 className="humidity">Humidity stands at {weatherData.current.humidity}</h3>
+        </div>
+        <div className="icon-sec flex aligh-center justify-center">
+          <img className="icon" src={weatherData.current.condition.icon} alt="" />
+        </div>
       </div>
       <div className="weekly-weather-sec flex column"></div>
     </section>
