@@ -49,12 +49,13 @@
 
     }
     .hourly-forecast{
-        height: 30%;
+        height: 27%;
         background-color: #2b3a50;
         margin-inline-end: 2%;
         border-radius: 20px;
         padding-inline-start: 2%;
         padding-block: 2%;
+        margin-bottom: 15px;
 
         .title{
             font-size: small;
@@ -67,5 +68,14 @@
                 border-right: 1px solid grey;
             }
         }
+    }
+
+    .forecast-details{
+        height: 30%;
+        background-color: #2b3a50;
+        margin-inline-end: 2%;
+        border-radius: 20px;
+        padding-inline-start: 2%;
+        padding-block: 2%;
     }
 }

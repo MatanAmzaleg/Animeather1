@@ -45,7 +45,7 @@ export const MainWeather = ({ weatherData, fetchCurrLocationData }) => {
             />
           </div>
         </div>
-        <div className="hourly-forecast debug">
+        <div className="hourly-forecast ">
           <h4 className="title">TODAYS FORECAST</h4>
           <div className="hourly-cards-layout flex">
 
@@ -53,9 +53,13 @@ export const MainWeather = ({ weatherData, fetchCurrLocationData }) => {
             if (desiredHours.includes(idx)) {
               return <HourlyTempCard key={idx} weatherData={hourData} />;
             }
-            return null; // Return null for hours not in desiredHours
+            return null;
           })}
           </div>
+        </div>
+
+        <div className="forecast-details">
+
         </div>
       </div>
       <div className="weekly-weather-sec flex column"></div>
