@@ -10,6 +10,11 @@
  }
   @font-face {
      font-family: 'Neue';
-     src: local('CoreSans'), url('./fonts/Fontspring-DEMO-neuesingular-h-regular.otf');
+     src: local('Neue'), url('./fonts/Fontspring-DEMO-neuesingular-h-regular.otf');
+ }
+
+  @font-face {
+     font-family: 'Roboto';
+     src: local('Roboto'), url('./fonts/Roboto-Light.ttf');
  }
 

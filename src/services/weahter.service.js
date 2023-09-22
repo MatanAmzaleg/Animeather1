@@ -18,6 +18,6 @@ async function getWeatherDetails (query){
    return data.data
 }
 catch(err){
-    console.log(err);
+    throw err
 }
 }

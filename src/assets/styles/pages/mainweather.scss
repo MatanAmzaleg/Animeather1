@@ -10,7 +10,7 @@
     .city-sec {
         padding-inline: 2%;
         padding-block-start: 2%;
-        height: 30%;
+        height: 36%;
         font-family: CoreSans;
         gap: 20px;
 
@@ -20,7 +20,7 @@
             gap: 10px;
 
             .city{
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .state{
@@ -29,12 +29,12 @@
         }
         .humidity{
             color: rgb(141, 141, 141);
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             margin-top: 5px;
         }
         .degrees{
-            margin-top: 40px;
             font-size: 2.9rem;
+            padding-bottom: 30px;
         }
         
         .icon-sec{
@@ -59,23 +59,54 @@
 
         .title{
             font-size: small;
-            color: rgb(141, 141, 141);
-            margin-bottom: 10px;
+            color: #8B929B;
+            margin-bottom: 15px;
         }
 
         .hourly-cards-layout{
             >*:not(:last-child) {
-                border-right: 1px solid grey;
+                border-right: 1px solid rgb(202, 202, 202);
             }
         }
     }
 
     .forecast-details{
-        height: 30%;
+        height: 37%;
         background-color: #2b3a50;
         margin-inline-end: 2%;
         border-radius: 20px;
         padding-inline-start: 2%;
         padding-block: 2%;
+
+        .title{
+            font-size: small;
+            color: #8B929B;
+            margin-bottom: 15px;
+        }
+
+        .air-condition-details-sec{
+          >*{
+              font-family: Roboto;
+          } 
+
+          height: 100%;
+          .detail-sec{
+            width: 50%;
+            height: 50%;
+            gap: 7px;
+          }
+
+          .icon-title{
+            font-family: Roboto;
+            font-size: large;
+            color: #8B929B;
+          }
+
+          .icon-data{
+            font-family: Roboto;
+            font-size: larger;
+            color: #e2e2e2;
+          }
+        }
     }
 }
