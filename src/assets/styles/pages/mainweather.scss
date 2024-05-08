@@ -1,112 +1,148 @@
 .main-weather-sec {
-    height: 100%;
+  height: 100%;
 
-    .weekly-weather-sec {
-        width: 40%;
-        background-color: #2b3a50;
-        border-radius: 20px;
+  .weekly-weather-sec {
+    width: 40%;
+    background-color: #2b3a50;
+    border-radius: 20px;
+    padding: 2%;
+
+    .title {
     }
 
-    .city-sec {
-        padding-inline: 2%;
-        padding-block-start: 2%;
-        height: 36%;
-        font-family: CoreSans;
-        gap: 20px;
+    .weekly-forcast-form {
+      height: 100%;
 
-        .location-heading{
-            width: 60%;
-            align-items: baseline;
-            gap: 10px;
+      .daily-forecast {
+        height: 20%;
+        align-items: center;
+        border-bottom: 1px solid #395279;
 
-            .city{
-                font-size: 2.5rem;
-            }
-
-            .state{
-                font-weight: 100;
-            }
-        }
-        .humidity{
-            color: rgb(141, 141, 141);
-            font-size: 0.9rem;
-            margin-top: 5px;
-        }
-        .degrees{
-            font-size: 2.9rem;
-            padding-bottom: 30px;
-        }
-        
         .icon-sec{
-            width: 40%;
-            height: auto;
+
             .icon{
-                width: max(30px,100px);
-                height: max(30px,100px);
+                width: 60px;
             }
         }
-
-
+      }
     }
-    .hourly-forecast{
-        height: 27%;
-        background-color: #2b3a50;
-        margin-inline-end: 2%;
-        border-radius: 20px;
-        padding-inline-start: 2%;
-        padding-block: 2%;
-        margin-bottom: 15px;
+  }
 
-        .title{
-            font-size: small;
-            color: #8B929B;
-            margin-bottom: 15px;
-        }
+  .city-sec {
+    padding-inline: 2%;
+    padding-block-start: 2%;
+    height: 36%;
+    font-family: CoreSans;
+    gap: 20px;
 
-        .hourly-cards-layout{
-            >*:not(:last-child) {
-                border-right: 1px solid rgb(202, 202, 202);
-            }
-        }
+    .location-heading {
+      width: 60%;
+      align-items: baseline;
+      gap: 10px;
+
+      .city {
+        font-size: 2.5rem;
+      }
+
+      .state {
+        font-weight: 100;
+      }
+    }
+    .humidity {
+      color: rgb(141, 141, 141);
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+    .degrees {
+      font-size: 2.9rem;
+      padding-bottom: 30px;
     }
 
-    .forecast-details{
-        height: 37%;
-        background-color: #2b3a50;
-        margin-inline-end: 2%;
-        border-radius: 20px;
-        padding-inline-start: 2%;
-        padding-block: 2%;
-
-        .title{
-            font-size: small;
-            color: #8B929B;
-            margin-bottom: 15px;
-        }
-
-        .air-condition-details-sec{
-          >*{
-              font-family: Roboto;
-          } 
-
-          height: 100%;
-          .detail-sec{
-            width: 50%;
-            height: 50%;
-            gap: 7px;
-          }
-
-          .icon-title{
-            font-family: Roboto;
-            font-size: large;
-            color: #8B929B;
-          }
-
-          .icon-data{
-            font-family: Roboto;
-            font-size: larger;
-            color: #e2e2e2;
-          }
-        }
+    .icon-sec {
+      width: 40%;
+      height: auto;
+      .icon {
+        width: max(30px, 100px);
+        height: max(30px, 100px);
+      }
     }
+  }
+  .hourly-forecast {
+    height: 27%;
+    background-color: #2b3a50;
+    margin-inline-end: 2%;
+    border-radius: 20px;
+    padding-inline-start: 2%;
+    padding-block: 2%;
+    margin-bottom: 15px;
+
+    .title {
+      font-size: small;
+      color: #8b929b;
+      margin-bottom: 15px;
+    }
+
+    .hourly-cards-layout {
+      > *:not(:last-child) {
+        border-right: 1px solid rgb(202, 202, 202);
+      }
+    }
+  }
+
+  .forecast-details {
+    height: 37%;
+    background-color: #2b3a50;
+    margin-inline-end: 2%;
+    border-radius: 20px;
+    padding-inline-start: 2%;
+    padding-block: 2%;
+
+
+    .see-more-btn{
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 10px;
+      border-radius: 7px;
+      font-size: 10px;
+      width: 13%;
+      background-color: #0095FF;
+      border: 0;
+      color: white;
+      height: 7%;
+      cursor: pointer;
+    }
+
+    .title {
+      font-size: small;
+      color: #8b929b;
+      margin-bottom: 15px;
+    }
+
+    .air-condition-details-sec {
+      > * {
+        font-family: Roboto;
+      }
+
+      height: 100%;
+      .detail-sec {
+        width: 50%;
+        height: 50%;
+        gap: 7px;
+      }
+
+      .icon-title {
+        font-family: Roboto;
+        font-size: large;
+        color: #8b929b;
+        margin-bottom: 10px;
+      }
+
+      .icon-data {
+        font-family: Roboto;
+        font-size: larger;
+        color: #e2e2e2;
+      }
+    }
+  }
 }

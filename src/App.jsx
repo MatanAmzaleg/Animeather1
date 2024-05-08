@@ -9,6 +9,7 @@ import Skeleton from "@mui/material/Skeleton";
 
 function App() {
   const [weatherDetails, setWeatherDetails] = useState("");
+  const [weeklyForecast, setWeeklyForecast] = useState("");
   const [input, setInput] = useState("");
 
   useEffect(() => {
@@ -68,14 +69,16 @@ function App() {
   const fetchCurrLocationData = async (add) => {
     console.log(add);
     const weatherData = await weatherService.getWeatherDetails(add.city);
+    const weeklyForecasty = await weatherService.getWeeklyForecast(add.city)
     setWeatherDetails(weatherData);
+    setWeeklyForecast(weeklyForecasty)
   };
 
 
   return (
     <>
       <section className="main-sec flex">
-        {weatherDetails ? (
+        {weatherDetails && weeklyForecast ? (
           <Sidebar></Sidebar>
         ) : (
           <Skeleton
@@ -86,7 +89,7 @@ function App() {
           />
         )}
         <div className="info-sec flex column">
-          {weatherDetails ? (
+          {weatherDetails && weeklyForecast ? (
             <SearchBar setInput={setInput} input={input}></SearchBar>
           ) : (
             <Skeleton
@@ -100,11 +103,12 @@ function App() {
             <Route
               path="/"
               element={
-                weatherDetails ? (
+                weatherDetails && weeklyForecast ? (
                   <MainWeather
                     fetchCurrLocationData={fetchCurrLocationData}
                     weatherData={weatherDetails}
                     setWeatherDetails={setWeatherDetails}
+                    weeklyForecast={weeklyForecast.list.filter((element, index) => index % 8 === 0)}
                   />
                 ) : (
                   <Skeleton
