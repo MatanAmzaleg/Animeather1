@@ -1,33 +1,57 @@
 .main-weather-sec {
   height: 100%;
 
-  .weekly-weather-sec {
-    width: 40%;
-    background-color: #2b3a50;
-    border-radius: 20px;
-    padding: 2%;
+  .weekly-forecast-container {
+    width: 43%;
+    position: relative;
 
-    .title {
+    .todays-forecast-sec {
+      background-color: #2b3a50;
+      border-radius: 20px;
+      padding: 4% 2% 4% 4%;
+      margin-bottom: 20px;
+
+      .title{
+        margin-bottom: 20px;
+      }
+
+      .hourly-day-forecast{
+        > *:not(:last-child) {
+          border-right: 1px solid rgba(182, 182, 182, 0.336);
+        }
+      }
     }
 
-    .weekly-forcast-form {
-      height: 100%;
+    .weekly-weather-sec {
+      background-color: #2b3a50;
+      border-radius: 20px;
+      padding: 4% 2% 4% 4%;
+      flex-grow: 1;
 
-      .daily-forecast {
-        height: 20%;
-        align-items: center;
-        border-bottom: 1px solid #395279;
+      .title {
+        font-size: 1.5rem;
+      }
 
-        .icon-sec{
+      .weekly-forcast-form {
+        height: 100%;
 
-            .icon{
-                width: 60px;
+        > *:not(:last-child) {
+          border-bottom: 1px solid #395279;
+        }
+
+        .daily-forecast {
+          height: 20%;
+          align-items: center;
+
+          .icon-sec {
+            .icon {
+              width: 60px;
             }
+          }
         }
       }
     }
   }
-
   .city-sec {
     padding-inline: 2%;
     padding-block-start: 2%;
@@ -84,7 +108,7 @@
 
     .hourly-cards-layout {
       > *:not(:last-child) {
-        border-right: 1px solid rgb(202, 202, 202);
+        border-right: 1px solid rgba(182, 182, 182, 0.336);
       }
     }
   }
@@ -97,8 +121,7 @@
     padding-inline-start: 2%;
     padding-block: 2%;
 
-
-    .see-more-btn{
+    .see-more-btn {
       position: absolute;
       top: 0;
       right: 0;
@@ -106,7 +129,7 @@
       border-radius: 7px;
       font-size: 10px;
       width: 13%;
-      background-color: #0095FF;
+      background-color: #0095ff;
       border: 0;
       color: white;
       height: 7%;
