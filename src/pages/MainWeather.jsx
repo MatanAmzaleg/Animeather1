@@ -8,7 +8,7 @@ export const MainWeather = ({
   weeklyForecast,
 }) => {
   const [isSeeMore, setIsSeeMore] = useState(false);
-  console.log(weatherData.forecast.forecastday[0].hour[getCurrentHour()]);
+  console.log(weatherData);
   const desiredHours = [6, 9, 12, 15, 18, 21];
   const icons = [
     {
@@ -33,13 +33,57 @@ export const MainWeather = ({
     },
   ];
 
+  const expandedIcons = [
+    {
+      icon: "temp",
+      title: "real feel",
+      data: weatherData.current.feelslike_c + "\u00B0",
+    },
+    {
+      icon: "rain",
+      title: "Chance of rain",
+      data: `${weatherData.forecast.forecastday[0].day.daily_chance_of_rain}%`,
+    },
+    {
+      icon: "wind",
+      title: "wind",
+      data: `${weatherData.current.wind_kph} Km/h`,
+    },
+    {
+      icon: "wind_dir",
+      title: "Wind direction",
+      data: `${weatherData.current.wind_dir} `,
+    },
+
+    {
+      icon: "sun",
+      title: "UV index",
+      data: `${weatherData.current.uv}`,
+    },
+    {
+      icon: "visibility",
+      title: "Visibility",
+      data: `${weatherData.current.vis_km} Km`,
+    },
+    {
+      icon: "humidity",
+      title: "Humidity",
+      data: `${weatherData.current.humidity} `,
+    },
+    {
+      icon: "pressure",
+      title: "Pressure",
+      data: `${weatherData.current.pressure_mb} `,
+    },
+  ];
+
   function getCurrentHour() {
     const date = new Date();
     const currentHour = date.getHours();
     return currentHour;
   }
 
-  function getFilteredForecat() {
+  function getFilteredForecast() {
     let currentHour = getCurrentHour();
     const filteredForecast = [];
     for (var i = 0; i < 3; i++) {
@@ -47,7 +91,7 @@ export const MainWeather = ({
         weatherData.forecast.forecastday[0].hour[currentHour]
       );
       currentHour += 3;
-      if (currentHour > 24) currentHour = currentHour - 24;
+      if (currentHour >= 24) currentHour = currentHour - 24;
     }
     return filteredForecast;
   }
@@ -67,7 +111,7 @@ export const MainWeather = ({
                 </h1>
               </div>
               <h3 className="humidity">
-                Humidity stands at {weatherData.current.humidity}
+                Weather condition: {weatherData.current.condition.text}
               </h3>
             </div>
             <h1 className="degrees">{weatherData.current.temp_c}&deg;C</h1>
@@ -80,6 +124,31 @@ export const MainWeather = ({
             />
           </div>
         </div>
+        {!isSeeMore ? null : ( 
+          <div className="forecast-details-more relative"  style={{ height: isSeeMore ? '66%' : 'auto' }}>
+          <button
+            className="see-more-btn"
+            onClick={() => setIsSeeMore(!isSeeMore)}
+          >
+            Show Less
+          </button>
+          <h1 className="title">More details:</h1>
+          <div className="air-condition-details-sec flex wrap space-between">
+            {expandedIcons.map((icon, idx) => {
+              const iconSrc = `src\\assets\\icons\\weather-icons\\${icon.icon}.png`;
+              return (
+                <div key={idx} className="detail-sec flex ">
+                  <img className="s-icon relative" src={iconSrc} alt="" />
+                  <div className="icon-title flex column">
+                    <h5 className="icon-title">{icon.title}</h5>
+                    <h5 className="icon-data bolder">{icon.data} </h5>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        ) }
         {isSeeMore ? null : (
           <div className="hourly-forecast ">
             <h4 className="title">TODAYS FORECAST</h4>
@@ -94,29 +163,31 @@ export const MainWeather = ({
           </div>
         )}
 
-        <div className="forecast-details relative">
-          <button
-            className="see-more-btn"
-            onClick={() => setIsSeeMore(!isSeeMore)}
-          >
-            {isSeeMore ? "Show less" : "Show more"}
-          </button>
-          <h1 className="title">AIR CONDITIONS</h1>
-          <div className="air-condition-details-sec flex wrap space-between">
-            {icons.map((icon, key) => {
-              const iconSrc = `src\\assets\\icons\\weather-icons\\${icon.icon}.png`;
-              return (
-                <div className="detail-sec flex ">
-                  <img className="s-icon" src={iconSrc} alt="" />
-                  <div className="icon-title flex column">
-                    <h5 className="icon-title">{icon.title}</h5>
-                    <h5 className="icon-data bolder">{icon.data} </h5>
+        {isSeeMore ? null : (
+          <div className="forecast-details relative">
+            <button
+              className="see-more-btn"
+              onClick={() => setIsSeeMore(!isSeeMore)}
+            >
+              Show more
+            </button>
+            <h1 className="title">AIR CONDITIONS</h1>
+            <div className="air-condition-details-sec flex wrap space-between">
+              {icons.map((icon, idx) => {
+                const iconSrc = `src\\assets\\icons\\weather-icons\\${icon.icon}.png`;
+                return (
+                  <div key={idx} className="detail-sec flex ">
+                    <img className="s-icon" src={iconSrc} alt="" />
+                    <div className="icon-title flex column">
+                      <h5 className="icon-title">{icon.title}</h5>
+                      <h5 className="icon-data bolder">{icon.data} </h5>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       <div className="weekly-forecast-container flex column">
@@ -124,7 +195,7 @@ export const MainWeather = ({
           <div className="todays-forecast-sec">
             <h3 className="title">Today's Forecast</h3>
             <div className="hourly-day-forecast flex">
-              {getFilteredForecat().map((forecast, idx) => {
+              {getFilteredForecast().map((forecast, idx) => {
                 return <HourlyTempCard key={idx} weatherData={forecast} />;
               })}
             </div>
@@ -134,10 +205,10 @@ export const MainWeather = ({
         <div className="weekly-weather-sec flex column">
           <h3 className="title">7 Day Forecast</h3>
           <div className="weekly-forcast-form">
-            {weeklyForecast.map((info) => {
+            {weeklyForecast.map((info, idx) => {
               const iconSrc = `http://openweathermap.org/img/w/${info.weather[0].icon}.png`;
               return (
-                <div className="daily-forecast flex space-between">
+                <div key={idx} className="daily-forecast flex space-between">
                   <h5>{utilService.getDayOfWeek(info.dt)}</h5>
                   <div className="icon-sec flex align-center">
                     <img className="icon" src={iconSrc} alt="" />

@@ -11,11 +11,11 @@
       padding: 4% 2% 4% 4%;
       margin-bottom: 20px;
 
-      .title{
+      .title {
         margin-bottom: 20px;
       }
 
-      .hourly-day-forecast{
+      .hourly-day-forecast {
         > *:not(:last-child) {
           border-right: 1px solid rgba(182, 182, 182, 0.336);
         }
@@ -55,7 +55,7 @@
   .city-sec {
     padding-inline: 2%;
     padding-block-start: 2%;
-    height: 36%;
+    height: 34%;
     font-family: CoreSans;
     gap: 20px;
 
@@ -114,7 +114,7 @@
   }
 
   .forecast-details {
-    height: 37%;
+    height: 38%;
     background-color: #2b3a50;
     margin-inline-end: 2%;
     border-radius: 20px;
@@ -132,7 +132,7 @@
       background-color: #0095ff;
       border: 0;
       color: white;
-      height: 7%;
+      height: min(7%, 19px);
       cursor: pointer;
     }
 
@@ -150,7 +150,6 @@
       height: 100%;
       .detail-sec {
         width: 50%;
-        height: 50%;
         gap: 7px;
       }
 
@@ -159,6 +158,68 @@
         font-size: large;
         color: #8b929b;
         margin-bottom: 10px;
+      }
+
+      .icon-data {
+        font-family: Roboto;
+        font-size: larger;
+        color: #e2e2e2;
+      }
+    }
+  }
+  .forecast-details-more {
+    height: 38%;
+    margin-inline-end: 2%;
+    border-radius: 20px;
+    padding-inline-start: 2%;
+    padding-block: 2%;
+
+    .see-more-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 10px;
+      border-radius: 7px;
+      font-size: 10px;
+      width: 13%;
+      background-color: #0095ff;
+      border: 0;
+      color: white;
+      height: min(7%, 19px);
+      cursor: pointer;
+    }
+
+    .title {
+      font-size: small;
+      color: #8b929b;
+      margin-bottom: 15px;
+    }
+
+    .air-condition-details-sec {
+      > * {
+        font-family: Roboto;
+      }
+
+      height: 97%;
+      .detail-sec {
+        width: 48%;
+        gap: 7px;
+        margin: 5px;
+        padding: 3px 0px 0px 2%;
+        background-color: #2b3a50;
+        border-radius: 20px;
+        align-items: center;
+      }
+
+      .icon-title {
+        font-family: Roboto;
+        font-size: large;
+        color: #8b929b;
+        margin-bottom: 10px;
+      }
+
+      .s-icon{
+        bottom: 25%;
       }
 
       .icon-data {
